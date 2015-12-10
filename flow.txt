@@ -1,0 +1,18 @@
+What I need:
+
+- Variables 
+- If sentences 
+- While loops
+- Lists
+
+There are three separate things that I want to accomplish in this game:
+1) Choose the word I have to guess
+2) Gather guesses and see if they are in the word
+3) Create the hangman graphic
+
+To make 'Python exam' Hangman:
+- String for the real word
+- list for the letters I am trying to guess
+- string for the letter I am guessing
+- A while loop that will let me guess until we're out of guesses or I want to end the game
+- An integer counter for the allowed amount of guesses
