@@ -16,3 +16,5 @@ To make 'Python exam' Hangman:
 - string for the letter I am guessing
 - A while loop that will let me guess until we're out of guesses or I want to end the game
 - An integer counter for the allowed amount of guesses
+
+
