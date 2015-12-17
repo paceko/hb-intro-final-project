@@ -4,6 +4,9 @@
 # starting a tuple with the hangman drawing
 
 import random #selecting a random word from a wordlist
+import time
+time1=time.time()
+
 HANGMAN = ('''  
 
   +---+
@@ -78,7 +81,7 @@ print "Are you really ready to play Python Hangman?? Let's go!!"  #this is where
 while wrong < WRONGMAX and until_now != word: 
     print HANGMAN[wrong] 
     print "\nThese are the letters you have already used:\n", used
-    print "\nThe word that needs to be guessed is:\n\n", until_now
+    print "\nThis is the secret word that you have to guess..:\n\n", until_now
 
     guess = raw_input("\nPlease enter your guess here:")
     guess = guess.upper() # everything bein compaired in caps
@@ -107,6 +110,10 @@ if wrong == WRONGMAX:
     print "\nYou are dead..sorry:("
 else:
     print "\nYou got lucky! You guessed it!"
-print "\nThe word was", word
+print "\nThe secret word was", word
+
+time2=time.time()
+totaltime=str(int(time2-time1))
+print 'And it only took you', totaltime, 'seconds'
 
 raw_input =("\n\nPress the enter key to exit.")
