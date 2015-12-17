@@ -1,11 +1,11 @@
-# hangmanpython imports a random word so import random
 # Using multi-line strings '''. So I don't have to use the \n 
 # Using all caps for HANGMAN indicating a constant variable
 # starting a tuple with the hangman drawing
+# add time contraint 
 
 import random #selecting a random word from a wordlist
-import time
-time1=time.time()
+import time # checking how long the user takes to guess the word
+time1=time.time() #starting to count the seconds
 
 HANGMAN = ('''  
 
@@ -83,12 +83,12 @@ while wrong < WRONGMAX and until_now != word:
     print "\nThese are the letters you have already used:\n", used
     print "\nThis is the secret word that you have to guess..:\n\n", until_now
 
-    guess = raw_input("\nPlease enter your guess here:")
+    guess = raw_input("\nPlease guess a letter:")
     guess = guess.upper() # everything bein compaired in caps
 
     while guess in used: # here we will know if the user already guessed the letter
         print "You have already guessed the letter:", guess
-        guess = raw_input ("Enter a guess: ")
+        guess = raw_input ("Guess a letter:")
         guess = guess.upper()
     used.append(guess)
 
@@ -104,7 +104,7 @@ while wrong < WRONGMAX and until_now != word:
         until_now = new
     else:
         "\nSorry,", guess, "isn't in the word"
-        word += 1 # will be increased by 1
+        wrong += 1 # will be increased by 1
 if wrong == WRONGMAX:
     print HANGMAN(wrong)
     print "\nYou are dead..sorry:("
@@ -112,8 +112,9 @@ else:
     print "\nYou got lucky! You guessed it!"
 print "\nThe secret word was", word
 
-time2=time.time()
-totaltime=str(int(time2-time1))
-print 'And it only took you', totaltime, 'seconds'
+time2=time.time() # counting seconds stops here
+totaltime=str(int(time2-time1)) # adding the start and finish of the time
+print '\nWow it took you', totaltime, 'seconds!!!;)'
+ 
 
 raw_input =("\n\nPress the enter key to exit.")
